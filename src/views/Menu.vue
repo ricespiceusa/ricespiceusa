@@ -471,7 +471,7 @@
         <div class="menu-category mb-8">
           <h3 class="category-title">
             <v-icon color="primary" class="mr-3">mdi-cake-variant</v-icon>
-            Desserts & Beverages
+            Beverages
           </h3>
           <v-row>
             <v-col 
@@ -1492,7 +1492,7 @@ export default {
             id: 62,
             name: 'Mango Lassi',
             description: 'Sweet yogurt drink with fresh mango',
-            image: '/images/mango-lassi-beverage.jpg',
+            image: '/images/mango-lassi.jpg',
             spicy: false,
             vegetarian: true,
             pricing: [
@@ -2133,19 +2133,6 @@ export default {
         ],
         desserts: [
           {
-            id: 47,
-            name: 'Gulab Jamun',
-            description: 'Sweet milk dumplings in rose-flavored syrup',
-            image: '/images/gulab-jamun.jpg',
-            spicy: false,
-            vegetarian: true,
-            pricing: [
-              { size: 'Regular', price: '4' }
-            ],
-            tags: ['Sweet', 'Traditional', 'Dessert'],
-            availableDays: ['monday-thursday', 'friday-sunday']
-          },
-          {
             id: 48,
             name: 'Mango Lassi',
             description: 'Sweet yogurt drink with fresh mango',
@@ -2153,7 +2140,7 @@ export default {
             spicy: false,
             vegetarian: true,
             pricing: [
-              { size: 'Regular', price: '3' }
+              { size: 'Regular', price: '4' }
             ],
             tags: ['Refreshing', 'Sweet', 'Drink'],
             availableDays: ['monday-thursday', 'friday-sunday']
