@@ -185,7 +185,7 @@
           <v-col cols="12" md="6" class="mb-6">
             <div class="about-image-wrapper">
               <v-img
-                src="/images/indian-cooking.jpg"
+                src="/logo.png"
                 alt="Indian Cooking"
                 height="400"
                 cover
@@ -291,7 +291,7 @@ export default {
           name: 'Biryani Rice',
           description: 'Fragrant basmati rice cooked with aromatic spices and tender meat',
           price: '14.99',
-          image: '/images/biryani.jpg',
+          image: '/images/chicken-dum-biriyani.jpg',
           tags: ['Traditional', 'Aromatic', 'Hearty']
         },
         {
@@ -299,7 +299,7 @@ export default {
           name: 'Naan Bread',
           description: 'Soft, fluffy bread baked in traditional tandoor oven',
           price: '3.99',
-          image: '/images/naan.jpg',
+          image: '/images/plain-naan.jpg',
           tags: ['Fresh', 'Soft', 'Traditional']
         }
       ],
@@ -308,25 +308,25 @@ export default {
           id: 1,
           text: "The best Indian food I've ever had! The flavors are incredible and the portions are generous.",
           rating: 5,
-          name: "Sarah Johnson",
-          location: "Downtown",
-          avatar: "/images/avatar1.jpg"
+          name: "Jayanth Reddy",
+          location: "Harrisburg",
+          avatar: "/images/jayanth.png"
         },
         {
           id: 2,
           text: "Authentic taste that reminds me of home. The food truck concept is brilliant!",
           rating: 5,
-          name: "Raj Patel",
-          location: "Westside",
-          avatar: "/images/avatar2.jpg"
+          name: "Maria Garcia",
+          location: "Falls Park",
+          avatar: "/images/maria.png"
         },
         {
           id: 3,
           text: "Fresh ingredients and amazing spices. I'm a regular customer now!",
           rating: 5,
-          name: "Maria Garcia",
-          location: "Eastside",
-          avatar: "/images/avatar3.jpg"
+          name: "January Jones",
+          location: "Suiox Falls",
+          avatar: "/images/jones.jpg"
         }
       ]
     }
@@ -338,7 +338,7 @@ export default {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -378,7 +378,7 @@ export default {
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, #FFD23F, #FFFFFF);
+  background: linear-gradient(45deg, #60a5fa, #FFFFFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -397,7 +397,7 @@ export default {
 .tagline-text {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #FFD23F;
+  color: #60a5fa;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -460,7 +460,7 @@ export default {
   width: 80px;
   height: 80px;
   margin: 0 auto 24px;
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -529,7 +529,7 @@ export default {
 }
 
 .price-chip {
-  background: rgba(255, 107, 53, 0.9) !important;
+  background: rgba(30, 58, 138, 0.9) !important;
   color: white !important;
   font-weight: 600;
 }
@@ -596,7 +596,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 107, 53, 0.3), rgba(247, 147, 30, 0.3));
+  background: linear-gradient(45deg, rgba(30, 58, 138, 0.3), rgba(59, 130, 246, 0.3));
   border-radius: 16px;
 }
 
@@ -645,7 +645,7 @@ export default {
 
 .cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
 }
 

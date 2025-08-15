@@ -12,20 +12,20 @@ const vuetify = createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#FF6B35',
-          secondary: '#F7931E',
-          accent: '#FFD23F',
-          success: '#4CAF50',
-          info: '#2196F3',
-          warning: '#FF9800',
-          error: '#F44336',
-          background: '#FAFAFA',
-          surface: '#FFFFFF',
-          'on-primary': '#FFFFFF',
-          'on-secondary': '#FFFFFF',
+          primary: '#1e3a8a',
+          secondary: '#3b82f6',
+          accent: '#60a5fa',
+          success: '#16a34a',
+          info: '#0ea5e9',
+          warning: '#f59e0b',
+          error: '#dc2626',
+          background: '#f8fafc',
+          surface: '#ffffff',
+          'on-primary': '#ffffff',
+          'on-secondary': '#ffffff',
           'on-accent': '#000000',
-          'on-background': '#212121',
-          'on-surface': '#212121'
+          'on-background': '#1e293b',
+          'on-surface': '#1e293b'
         }
       }
     }

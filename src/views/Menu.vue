@@ -2193,7 +2193,7 @@ export default {
 
 <style scoped>
 .menu-hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 80px 0;
   color: white;
 }
@@ -2331,7 +2331,7 @@ export default {
 
 .price {
   font-weight: 700;
-  color: #FF6B35;
+  color: #1e3a8a;
   font-size: 1.1rem;
 }
 

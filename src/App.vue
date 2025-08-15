@@ -19,7 +19,7 @@
           </v-avatar>
           <div>
             <h1 class="text-h5 font-weight-bold text-white mb-0">Rice & Spice</h1>
-            <p class="text-caption text-white mb-0">Authentic Indian Cuisine</p>
+            <p class="text-caption text-white mb-0">Authentic Taste Of Indian Home</p>
           </div>
         </div>
 
@@ -163,11 +163,11 @@ export default {
 
 <style scoped>
 .v-app-bar {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
 }
 
 .v-footer {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
 }
 
 .v-list-item:hover {

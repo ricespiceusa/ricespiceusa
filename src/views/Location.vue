@@ -21,10 +21,10 @@
             <div class="location-card mb-4">
               <div class="d-flex align-center mb-3">
                 <v-icon color="primary" size="32" class="me-3">mdi-map-marker</v-icon>
-                <h3 class="text-h5 font-weight-bold mb-0">Downtown Food Truck Park</h3>
+                <h3 class="text-h5 font-weight-bold mb-0">Downtown Sioux Falls</h3>
               </div>
               <p class="text-body-1 mb-2">123 Main Street</p>
-              <p class="text-body-1 mb-3">City, State 12345</p>
+              <p class="text-body-1 mb-3">Sioux Falls, SD 57104</p>
               
               <div class="d-flex flex-wrap gap-3 mb-4">
                 <v-chip
@@ -68,12 +68,49 @@
               <h4 class="text-h6 font-weight-bold mb-3">Today's Schedule</h4>
               <div class="schedule-item">
                 <span class="time">11:00 AM - 2:00 PM</span>
-                <span class="location">Downtown Food Truck Park</span>
+                <span class="location">Downtown Sioux Falls</span>
               </div>
               <div class="schedule-item">
                 <span class="time">5:00 PM - 9:00 PM</span>
-                <span class="location">Riverside Plaza</span>
+                <span class="location">Falls Park Area</span>
               </div>
+            </div>
+            
+            <!-- Harrisburg Location Card -->
+            <div class="location-card mb-4 mt-4">
+              <div class="d-flex align-center mb-3">
+                <v-icon color="secondary" size="32" class="me-3">mdi-map-marker</v-icon>
+                <h3 class="text-h5 font-weight-bold mb-0">Harrisburg Area</h3>
+              </div>
+              <p class="text-body-1 mb-2">101 Harrisburg Main St</p>
+              <p class="text-body-1 mb-3">Harrisburg, SD 57032</p>
+              
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <v-chip
+                  color="success"
+                  variant="outlined"
+                  prepend-icon="mdi-clock"
+                >
+                  Open Now
+                </v-chip>
+                <v-chip
+                  color="secondary"
+                  variant="outlined"
+                  prepend-icon="mdi-phone"
+                >
+                  605-592-0819
+                </v-chip>
+              </div>
+              
+              <v-btn
+                color="secondary"
+                size="large"
+                class="me-3"
+                @click="getDirectionsToHarrisburg"
+              >
+                <v-icon class="me-2">mdi-directions</v-icon>
+                Get Directions
+              </v-btn>
             </div>
             
             <!-- Order Timings Section -->
@@ -99,11 +136,18 @@
               <v-card-title class="text-h5 font-weight-bold mb-3">
                 Interactive Map
               </v-card-title>
-              <div class="map-placeholder">
-                <v-icon size="64" color="primary" class="mb-3">mdi-map</v-icon>
-                <p class="text-body-1">Map integration would go here</p>
-                <p class="text-caption text-grey">Google Maps or similar service</p>
-              </div>
+                             <div class="google-map-container">
+                 <iframe
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2685394414416!2d-96.7003!3d43.5446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMyJzQwLjYiTiA5NsKwNDInMDEuMSJX!5e0!3m2!1sen!2sus!4v1234567890!5m1!1e1"
+                   width="100%"
+                   height="400"
+                   style="border:0; border-radius: 8px;"
+                   allowfullscreen=""
+                   loading="lazy"
+                   referrerpolicy="no-referrer-when-downgrade"
+                   title="Rice & Spice Food Truck Locations - Sioux Falls & Harrisburg, SD"
+                 ></iframe>
+               </div>
             </v-card>
           </v-col>
         </v-row>
@@ -333,7 +377,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="section" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);">
+    <section class="section" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
       <v-container>
         <div class="text-center text-white">
           <h2 class="section-title text-white mb-4">Hungry? Find Us Today!</h2>
@@ -377,15 +421,15 @@ export default {
           locations: [
             {
               time: '11:00 AM - 2:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 9:00 PM',
-              name: 'Riverside Plaza',
-              address: '456 River Road, Riverside',
+              name: 'Falls Park Area',
+              address: '456 Falls Park Drive, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             }
@@ -396,15 +440,15 @@ export default {
           locations: [
             {
               time: '11:00 AM - 2:00 PM',
-              name: 'University Campus',
-              address: '789 College Blvd, University District',
+              name: 'Sioux Falls Campus',
+              address: '789 College Blvd, Sioux Falls, SD 57105',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 9:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             }
@@ -415,15 +459,15 @@ export default {
           locations: [
             {
               time: '11:00 AM - 2:00 PM',
-              name: 'Business District',
-              address: '321 Corporate Ave, Business Center',
+              name: 'Sioux Falls Business District',
+              address: '321 Corporate Ave, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 9:00 PM',
-              name: 'Riverside Plaza',
-              address: '456 River Road, Riverside',
+              name: 'Falls Park Area',
+              address: '456 Falls Park Drive, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             }
@@ -434,15 +478,15 @@ export default {
           locations: [
             {
               time: '11:00 AM - 2:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 9:00 PM',
-              name: 'University Campus',
-              address: '789 College Blvd, University District',
+              name: 'Sioux Falls Campus',
+              address: '789 College Blvd, Sioux Falls, SD 57105',
               status: 'open',
               special: false
             }
@@ -453,15 +497,15 @@ export default {
           locations: [
             {
               time: '11:00 AM - 2:00 PM',
-              name: 'Business District',
-              address: '321 Corporate Ave, Business Center',
+              name: 'Sioux Falls Business District',
+              address: '321 Corporate Ave, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 10:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: true
             }
@@ -472,15 +516,15 @@ export default {
           locations: [
             {
               time: '12:00 PM - 4:00 PM',
-              name: 'Riverside Plaza',
-              address: '456 River Road, Riverside',
+              name: 'Harrisburg Area',
+              address: '101 Harrisburg Main St, Harrisburg, SD 57032',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 10:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: true
             }
@@ -491,71 +535,69 @@ export default {
           locations: [
             {
               time: '12:00 PM - 4:00 PM',
-              name: 'Downtown Food Truck Park',
-              address: '123 Main Street, Downtown',
+              name: 'Downtown Sioux Falls',
+              address: '123 Main Street, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             },
             {
               time: '5:00 PM - 9:00 PM',
-              name: 'Riverside Plaza',
-              address: '456 River Road, Riverside',
+              name: 'Falls Park Area',
+              address: '456 Falls Park Drive, Sioux Falls, SD 57104',
               status: 'open',
               special: false
             }
           ]
         }
       },
-      popularLocations: [
-        {
-          id: 1,
-          name: 'Downtown Food Truck Park',
-          address: '123 Main Street, Downtown',
-          hours: '11:00 AM - 9:00 PM',
-          phone: '(555) 123-4567',
-          status: 'open',
-          image: '/downtown-location.jpg'
-        },
-        {
-          id: 2,
-          name: 'Riverside Plaza',
-          address: '456 River Road, Riverside',
-          hours: '11:00 AM - 9:00 PM',
-          phone: '(555) 123-4567',
-          status: 'open',
-          image: '/riverside-location.jpg'
-        },
-        {
-          id: 3,
-          name: 'University Campus',
-          address: '789 College Blvd, University District',
-          hours: '11:00 AM - 2:00 PM',
-          phone: '(555) 123-4567',
-          status: 'closed',
-          image: '/university-location.jpg'
-        },
-        {
-          id: 4,
-          name: 'Business District',
-          address: '321 Corporate Ave, Business Center',
-          hours: '11:00 AM - 2:00 PM',
-          phone: '(555) 123-4567',
-          status: 'open',
-          image: '/business-location.jpg'
-        }
-      ]
+             popularLocations: [
+         {
+           id: 1,
+           name: 'Downtown Sioux Falls',
+           address: '123 Main Street, Sioux Falls, SD 57104',
+           hours: '11:00 AM - 9:00 PM',
+           phone: '(555) 123-4567',
+           status: 'closed',
+           image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=200&fit=crop&crop=center'
+         },
+         {
+           id: 2,
+           name: 'Sioux Falls Campus',
+           address: '789 College Blvd, Sioux Falls, SD 57105',
+           hours: '11:00 AM - 2:00 PM',
+           phone: '(555) 123-4567',
+           status: 'closed',
+           image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=200&fit=crop&crop=center'
+         },
+         {
+           id: 3,
+           name: 'Harrisburg Area',
+           address: '101 Harrisburg Main St, Harrisburg, SD 57032',
+           hours: '11:00 AM - 8:00 PM',
+           phone: '(555) 123-4567',
+           status: 'open',
+           image: '/images/house.jpg'
+         }
+       ]
     }
   },
   methods: {
     getDirections() {
       // Open Google Maps with current location
-      const address = '123 Main Street, City, State 12345';
+      const address = '123 Main Street, Sioux Falls, SD 57104';
+      const encodedAddress = encodeURIComponent(address);
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    },
+    
+    getDirectionsToHarrisburg() {
+      // Open Google Maps with Harrisburg location
+      const address = '101 Harrisburg Main St, Harrisburg, SD 57032';
       const encodedAddress = encodeURIComponent(address);
       window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
     },
     
     callUs() {
-      window.open('tel:555-123-4567', '_self');
+      window.open('tel:605-592-0819', '_self');
     },
     
     selectLocation(location) {
@@ -573,7 +615,7 @@ export default {
 
 <style scoped>
 .location-hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -624,7 +666,7 @@ export default {
 
 .time {
   font-weight: 600;
-  color: #FF6B35;
+  color: #1e3a8a;
 }
 
 .location {
@@ -637,7 +679,7 @@ export default {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #FF6B35;
+  border-left: 4px solid #1e3a8a;
 }
 
 .timing-item {
@@ -653,7 +695,7 @@ export default {
 }
 
 .timing-value {
-  color: #FF6B35;
+  color: #1e3a8a;
   font-weight: 600;
   text-align: right;
 }
@@ -663,15 +705,21 @@ export default {
   overflow: hidden;
 }
 
-.map-placeholder {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-  color: #666;
+.google-map-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  border-radius: 8px;
+  overflow: hidden;
 }
+
+.google-map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
 
 .bg-light {
   background-color: #f8f9fa;
@@ -703,7 +751,7 @@ export default {
 .timeline-time {
   min-width: 120px;
   font-weight: 600;
-  color: #FF6B35;
+  color: #1e3a8a;
   display: flex;
   align-items: center;
 }

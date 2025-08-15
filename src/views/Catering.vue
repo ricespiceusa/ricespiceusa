@@ -37,7 +37,7 @@
           </v-col>
           <v-col cols="12" md="6">
             <v-card class="catering-image-card" elevation="4">
-              <v-img src="/catering-hero.jpg" height="400" cover></v-img>
+              <v-img src="/images/catering.jpg" height="400" cover></v-img>
             </v-card>
           </v-col>
         </v-row>
@@ -48,6 +48,10 @@
     <section class="section bg-light">
       <v-container>
         <h2 class="section-title">Catering Packages</h2>
+        <p class="section-subtitle">
+          Choose the perfect package for your event
+        </p>
+        
         <v-row>
           <v-col cols="12" md="4" v-for="pkg in packages" :key="pkg.id">
             <v-card class="package-card" elevation="3">
@@ -163,7 +167,7 @@ export default {
 
 <style scoped>
 .catering-hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 120px 0 80px;
 }
 
@@ -199,7 +203,7 @@ export default {
 
 .package-price {
   font-size: 24px;
-  color: #FF6B35;
+  color: #1e3a8a;
   font-weight: 700;
   margin: 16px 0;
 }

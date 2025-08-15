@@ -50,7 +50,7 @@
           
           <v-col cols="12" md="6" class="slide-in-right">
             <v-img
-              src="/story-image.jpg"
+              src="/images/about.jpg"
               height="500"
               cover
               class="rounded-lg"
@@ -198,7 +198,7 @@
           
           <v-col cols="12" md="6" class="slide-in-right">
             <v-img
-              src="/kitchen-image.jpg"
+              src="/images/quality.jpg"
               height="500"
               cover
               class="rounded-lg"
@@ -251,7 +251,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="section" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);">
+    <section class="section" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
       <v-container>
         <div class="text-center text-white">
           <h2 class="section-title text-white mb-4">Join Our Culinary Journey</h2>
@@ -307,10 +307,10 @@ export default {
       ],
       team: [
         {
-          name: 'Chef Rajesh Kumar',
+          name: 'Chef Lavanya Nellore',
           role: 'Head Chef & Founder',
-          bio: 'With over 20 years of culinary experience, Chef Rajesh brings authentic Indian flavors to every dish. His passion for traditional recipes and modern techniques has made Rice & Spice a household name.',
-          image: '/chef-rajesh.jpg',
+          bio: 'With over 30 years of culinary experience, Chef Lavanya Nellore brings authentic Indian flavors to every dish. His passion for traditional recipes and modern techniques has made Rice & Spice a household name.',
+          image: '/images/lavanya.jpg',
           specialties: [
             { icon: 'mdi-food-fork-drink', name: 'Traditional Indian' },
             { icon: 'mdi-fire', name: 'Tandoori' },
@@ -318,10 +318,10 @@ export default {
           ]
         },
         {
-          name: 'Priya Sharma',
+          name: 'Vish Nellore',
           role: 'Sous Chef',
-          bio: 'Priya specializes in North Indian cuisine and has mastered the art of perfect spice combinations. Her attention to detail ensures every dish is perfectly balanced.',
-          image: '/chef-priya.jpg',
+          bio: 'Vish Nellore specializes in Indian cuisine and has mastered the art of perfect spice combinations. Her attention to detail ensures every dish is perfectly balanced.',
+          image: '/images/293.JPG',
           specialties: [
             { icon: 'mdi-food-fork-drink', name: 'North Indian' },
             { icon: 'mdi-spice', name: 'Spice Master' },
@@ -329,10 +329,10 @@ export default {
           ]
         },
         {
-          name: 'Amit Patel',
+          name: 'Venku Reddy Nellore',
           role: 'Kitchen Manager',
-          bio: 'Amit ensures smooth operations and maintains our high standards of quality and hygiene. His organizational skills keep our kitchen running like a well-oiled machine.',
-          image: '/amit-patel.jpg',
+          bio: 'Venku Reddy ensures smooth operations and maintains our high standards of quality and hygiene. His organizational skills keep our kitchen running like a well-oiled machine.',
+          image: '/images/500.JPG',
           specialties: [
             { icon: 'mdi-cog', name: 'Operations' },
             { icon: 'mdi-shield-check', name: 'Quality Control' },
@@ -367,7 +367,7 @@ export default {
 
 <style scoped>
 .about-hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -430,7 +430,7 @@ export default {
 }
 
 .business-motto {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 20px;
   border-radius: 12px;
   text-align: center;
@@ -449,13 +449,13 @@ export default {
 .business-tagline {
   text-align: center;
   padding: 16px;
-  border: 2px solid #FFD23F;
+  border: 2px solid #3b82f6;
   border-radius: 8px;
-  background: rgba(255, 210, 63, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .tagline-title {
-  color: #FF6B35;
+  color: #1e3a8a;
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;

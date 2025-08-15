@@ -61,9 +61,10 @@
                   <v-col cols="12" md="6">
                     <v-text-field
                       v-model="form.phone"
-                      label="Phone Number"
+                      label="Phone Number *"
                       variant="outlined"
                       type="tel"
+                      required
                     ></v-text-field>
                   </v-col>
                 </v-row>
@@ -146,7 +147,7 @@
                   <v-icon color="primary" class="me-3">mdi-email</v-icon>
                   <h4 class="text-h6 mb-0">Email</h4>
                 </div>
-                <p class="text-body-1 ml-8">info@riceandspice.com</p>
+                <p class="text-body-1 ml-8">info@ricespiceusa.com</p>
                 <p class="text-caption text-grey ml-8">We'll respond within 24 hours</p>
               </div>
               
@@ -155,8 +156,8 @@
                   <v-icon color="primary" class="me-3">mdi-map-marker</v-icon>
                   <h4 class="text-h6 mb-0">Location</h4>
                 </div>
-                <p class="text-body-1 ml-8">Downtown Food Truck Park</p>
-                <p class="text-caption text-grey ml-8">123 Main Street, City, State 12345</p>
+                <p class="text-body-1 ml-8">Food Truck - Check our schedule</p>
+                <p class="text-caption text-grey ml-8">Various locations throughout the week</p>
               </div>
               
               <div class="contact-info-item mb-4">
@@ -165,7 +166,7 @@
                   <h4 class="text-h6 mb-0">Hours</h4>
                 </div>
                 <p class="text-body-1 ml-8">Monday - Sunday</p>
-                <p class="text-caption text-grey ml-8">11:00 AM - 9:00 PM</p>
+                <p class="text-caption text-grey ml-8">6:00 AM - 9:00 PM</p>
               </div>
               
               <v-divider class="my-4"></v-divider>
@@ -193,7 +194,8 @@
               
               <v-divider class="my-4"></v-divider>
               
-              <div class="text-center">
+              <!-- Social Media -->
+              <div class="social-media">
                 <h4 class="text-h6 font-weight-bold mb-3">Follow Us</h4>
                 <div class="d-flex justify-center gap-3">
                   <v-btn
@@ -264,7 +266,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="section" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);">
+    <section class="section" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
       <v-container>
         <div class="text-center text-white">
           <h2 class="section-title text-white mb-4">Ready to Experience Our Food?</h2>
@@ -361,7 +363,7 @@ export default {
       faqs: [
         {
           question: 'What are your operating hours?',
-          answer: 'We operate Monday through Sunday from 11:00 AM to 9:00 PM. However, hours may vary based on weather conditions and special events.'
+          answer: 'We operate Monday through Sunday from 6:00 AM to 9:00 PM. However, hours may vary based on weather conditions and special events.'
         },
         {
           question: 'Do you offer vegetarian options?',
@@ -425,7 +427,7 @@ export default {
 
 <style scoped>
 .contact-hero {
-  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
