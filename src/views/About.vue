@@ -309,7 +309,7 @@ export default {
         {
           name: 'Chef Lavanya Nellore',
           role: 'Head Chef & Founder',
-          bio: 'With over 30 years of culinary experience, Chef Lavanya Nellore brings authentic Indian flavors to every dish. His passion for traditional recipes and modern techniques has made Rice & Spice a household name.',
+          bio: 'With over 30 years of culinary experience, Chef Lavanya Nellore brings authentic Indian flavors to every dish. Her passion for traditional recipes and modern techniques has made Rice & Spice a household name.',
           image: '/images/lavanya.jpg',
           specialties: [
             { icon: 'mdi-food-fork-drink', name: 'Traditional Indian' },
@@ -320,11 +320,11 @@ export default {
         {
           name: 'Vish Nellore',
           role: 'Sous Chef',
-          bio: 'Vish Nellore specializes in Indian cuisine and has mastered the art of perfect spice combinations. Her attention to detail ensures every dish is perfectly balanced.',
+          bio: 'Vish Nellore specializes in Indian cuisine and has mastered the art of perfect spice combinations. His attention to detail ensures every dish is perfectly balanced.',
           image: '/images/293.JPG',
           specialties: [
             { icon: 'mdi-food-fork-drink', name: 'North Indian' },
-            { icon: 'mdi-spice', name: 'Spice Master' },
+            { icon: 'mdi-food-variant', name: 'Spice Master' },
             { icon: 'mdi-bread-slice', name: 'Bread Making' }
           ]
         },

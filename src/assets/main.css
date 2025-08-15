@@ -12,6 +12,20 @@ body {
   background-color: #f8fafc;
 }
 
+/* Global Responsive Images */
+img, .v-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure Vuetify images are responsive */
+.v-img__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 /* Custom Typography */
 .display-font {
   font-family: 'Playfair Display', serif;
@@ -247,7 +261,161 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive Utilities */
+.text-responsive {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.heading-responsive {
+  font-size: clamp(1.5rem, 6vw, 3rem);
+}
+
+.padding-responsive {
+  padding: clamp(20px, 5vw, 80px) 0;
+}
+
+.margin-responsive {
+  margin: clamp(20px, 5vw, 50px) 0;
+}
+
+/* Responsive Grid System */
+.responsive-grid {
+  display: grid;
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.responsive-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.responsive-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.responsive-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Responsive Image Utilities */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* Image aspect ratio utilities */
+.img-16-9 {
+  aspect-ratio: 16/9;
+}
+
+.img-4-3 {
+  aspect-ratio: 4/3;
+}
+
+.img-1-1 {
+  aspect-ratio: 1/1;
+}
+
 /* Responsive Design */
+@media (max-width: 600px) {
+  .v-img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .v-img {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .v-img {
+    max-height: 500px;
+  }
+}
+
+/* Responsive Design - Mobile First Approach */
+/* Extra Small devices (phones, 320px and down) */
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .custom-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .contact-form-card,
+  .contact-info-card {
+    padding: 20px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and down) */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section {
+    padding: 50px 0;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .custom-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+  
+  .contact-form-card,
+  .contact-info-card {
+    padding: 24px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+    margin: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
@@ -266,8 +434,180 @@ body {
   }
   
   .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .custom-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+  
+  .contact-form-card,
+  .contact-info-card {
+    padding: 30px;
+  }
+  
+  .testimonial-card {
+    padding: 25px;
+    margin: 20px;
+  }
+  
+  /* Mobile Navigation Adjustments */
+  .v-app-bar .v-container {
+    padding: 0 16px;
+  }
+  
+  .v-app-bar .v-avatar {
+    size: 40px;
+  }
+  
+  .v-app-bar h1 {
+    font-size: 1.1rem !important;
+  }
+  
+  .v-app-bar p {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section {
+    padding: 70px 0;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .contact-form-card,
+  .contact-info-card {
+    padding: 35px;
+  }
+  
+  /* Tablet Navigation Adjustments */
+  .v-app-bar .v-container {
+    padding: 0 24px;
+  }
+  
+  .v-app-bar .v-avatar {
+    size: 45px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 2.3rem;
+  }
+  
+  .section {
+    padding: 75px 0;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+  }
+}
+
+/* Extra extra large devices (1400px and up) */
+@media (min-width: 1400px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .section {
+    padding: 100px 0;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+  
+  .contact-form-card,
+  .contact-info-card {
+    padding: 50px;
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-section {
+    background-image: url('/hero-bg@2x.jpg');
+  }
+}
+
+/* Print Styles */
+@media print {
+  .v-app-bar,
+  .v-navigation-drawer,
+  .v-footer,
+  .custom-btn {
+    display: none !important;
+  }
+  
+  .section {
+    padding: 20px 0;
+    page-break-inside: avoid;
+  }
+  
+  .hero-section {
+    min-height: auto;
+    padding: 40px 0;
   }
 }
 
@@ -307,4 +647,65 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover-card:hover {
+    transform: none;
+  }
+  
+  .menu-item:hover {
+    transform: none;
+  }
+  
+  .custom-btn:hover {
+    transform: none;
+  }
+  
+  /* Increase touch targets */
+  .v-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .v-chip {
+    min-height: 32px;
+    padding: 8px 12px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+  
+  .section {
+    background-color: #1e293b;
+  }
+  
+  .menu-item,
+  .testimonial-card,
+  .contact-form {
+    background-color: #334155;
+    color: #e2e8f0;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .fade-in-up,
+  .slide-in-left,
+  .slide-in-right,
+  .pulse {
+    animation: none;
+  }
 } 

@@ -19,7 +19,7 @@
         </div>
         
         <v-card class="days-selector-card" elevation="4" rounded="xl">
-          <v-card-text class="pa-6">
+          <v-card-text class="pa-4 pa-sm-6">
             <div class="days-grid">
               <v-btn
                 v-for="day in availableDays"
@@ -30,8 +30,8 @@
                 class="day-btn"
                 @click="selectDay(day.value)"
               >
-                <v-icon left>{{ day.icon }}</v-icon>
-                {{ day.label }}
+                <v-icon left class="d-none d-sm-block">{{ day.icon }}</v-icon>
+                <span class="day-label">{{ day.label }}</span>
               </v-btn>
             </div>
           </v-card-text>
@@ -2199,19 +2199,19 @@ export default {
 }
 
 .days-selector-section {
-  padding: 60px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #333;
   margin-bottom: 16px;
 }
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #666;
   max-width: 600px;
   margin: 0 auto;
@@ -2224,7 +2224,7 @@ export default {
 
 .days-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
 
@@ -2233,11 +2233,17 @@ export default {
   font-weight: 600;
   border-radius: 12px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .day-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.day-label {
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .menu-categories-section {
@@ -2367,13 +2373,41 @@ export default {
 }
 
 /* Responsive Design */
+@media (max-width: 600px) {
+  .days-selector-section {
+    padding: 30px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .days-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .day-btn {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+  
+  .day-label {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
   }
   
   .days-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 12px;
   }
   
@@ -2391,6 +2425,34 @@ export default {
   .category-title .v-icon {
     margin-bottom: 8px;
     margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .days-selector-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .days-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .day-btn {
+    height: 70px;
+    font-size: 1rem;
+  }
+  
+  .day-label {
+    font-size: 1rem;
   }
 }
 </style> 

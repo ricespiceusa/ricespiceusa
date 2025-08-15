@@ -4,8 +4,8 @@
     <section class="contact-hero">
       <v-container>
         <div class="text-center text-white">
-          <h1 class="display-font text-h2 font-weight-bold mb-4">Get in Touch</h1>
-          <p class="text-h5">
+          <h1 class="display-font text-h3 text-sm-h2 font-weight-bold mb-4">Get in Touch</h1>
+          <p class="text-h6 text-sm-h5">
             We'd love to hear from you and answer any questions
           </p>
         </div>
@@ -19,35 +19,37 @@
           <!-- Contact Form -->
           <v-col cols="12" lg="8" class="mb-6">
             <v-card class="contact-form-card" elevation="4">
-              <v-card-title class="text-h4 font-weight-bold mb-4">
+              <v-card-title class="text-h4 text-sm-h3 font-weight-bold mb-4">
                 Send us a Message
               </v-card-title>
               
               <v-form @submit.prevent="submitForm" v-model="formValid">
                 <v-row>
-                  <v-col cols="12" md="6">
+                  <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="form.firstName"
                       label="First Name *"
                       :rules="[rules.required]"
                       variant="outlined"
                       required
+                      density="compact"
                     ></v-text-field>
                   </v-col>
                   
-                  <v-col cols="12" md="6">
+                  <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="form.lastName"
                       label="Last Name *"
                       :rules="[rules.required]"
                       variant="outlined"
                       required
+                      density="compact"
                     ></v-text-field>
                   </v-col>
                 </v-row>
                 
                 <v-row>
-                  <v-col cols="12" md="6">
+                  <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="form.email"
                       label="Email *"
@@ -55,16 +57,18 @@
                       variant="outlined"
                       type="email"
                       required
+                      density="compact"
                     ></v-text-field>
                   </v-col>
                   
-                  <v-col cols="12" md="6">
+                  <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="form.phone"
                       label="Phone Number *"
                       variant="outlined"
                       type="tel"
                       required
+                      density="compact"
                     ></v-text-field>
                   </v-col>
                 </v-row>
@@ -78,6 +82,7 @@
                       :rules="[rules.required]"
                       variant="outlined"
                       required
+                      density="compact"
                     ></v-select>
                   </v-col>
                 </v-row>
@@ -91,6 +96,7 @@
                       variant="outlined"
                       rows="5"
                       required
+                      density="compact"
                     ></v-textarea>
                   </v-col>
                 </v-row>
@@ -101,6 +107,7 @@
                       v-model="form.newsletter"
                       label="Subscribe to our newsletter for updates and special offers"
                       color="primary"
+                      density="compact"
                     ></v-checkbox>
                   </v-col>
                 </v-row>
@@ -129,7 +136,7 @@
           <!-- Contact Information -->
           <v-col cols="12" lg="4">
             <v-card class="contact-info-card h-100" elevation="4">
-              <v-card-title class="text-h5 font-weight-bold mb-4">
+              <v-card-title class="text-h5 text-sm-h4 font-weight-bold mb-4">
                 Contact Information
               </v-card-title>
               
@@ -185,7 +192,7 @@
                 
                 <div class="policy-item mb-3">
                   <div class="d-flex align-center mb-2">
-                    <v-icon color="success" class="me-2">mdi-shopping-bag</v-icon>
+                    <v-icon color="success" class="me-2">mdi-handshake</v-icon>
                     <span class="text-body-2 font-weight-medium">Pickup</span>
                   </div>
                   <p class="text-caption text-grey ml-8">No minimum – we happily accept all pickup orders of any amount!</p>
@@ -428,7 +435,7 @@ export default {
 <style scoped>
 .contact-hero {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-  padding: 120px 0 80px;
+  padding: 80px 0 60px;
   position: relative;
   overflow: hidden;
 }
@@ -451,12 +458,12 @@ export default {
 }
 
 .contact-form-card {
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
 }
 
 .contact-info-card {
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
 }
 
@@ -491,9 +498,46 @@ export default {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 60px 0 40px;
+  }
+  
+  .contact-form-card {
+    padding: 20px;
+  }
+  
+  .contact-info-card {
+    padding: 20px;
+  }
+  
+  .ml-8 {
+    margin-left: 20px;
+  }
+  
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .custom-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 100px 0 60px;
+    padding: 70px 0 50px;
   }
   
   .contact-form-card {
@@ -506,6 +550,100 @@ export default {
   
   .ml-8 {
     margin-left: 24px;
+  }
+  
+  .section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  .contact-hero {
+    padding: 80px 0 60px;
+  }
+  
+  .contact-form-card {
+    padding: 28px;
+  }
+  
+  .contact-info-card {
+    padding: 26px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-hero {
+    padding: 100px 0 80px;
+  }
+  
+  .contact-form-card {
+    padding: 40px;
+  }
+  
+  .contact-info-card {
+    padding: 35px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .contact-info-item:hover {
+    transform: none;
+  }
+  
+  .v-expansion-panel:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .v-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .contact-hero {
+    padding: 40px 0 30px;
+  }
+  
+  .section {
+    padding: 30px 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .contact-hero {
+    background: none !important;
+    color: #000 !important;
+    padding: 20px 0;
+  }
+  
+  .contact-hero::before {
+    display: none;
+  }
+  
+  .v-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
   }
 }
 </style> 

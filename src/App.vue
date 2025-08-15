@@ -5,50 +5,45 @@
       app
       color="primary"
       elevation="0"
-      class="px-4"
+      class="px-2 px-sm-4"
     >
-      <v-container class="d-flex align-center">
+      <v-container class="d-flex align-center pa-0">
         <v-app-bar-nav-icon
           @click="drawer = !drawer"
-          class="d-md-none"
+          class="d-lg-none me-2"
         ></v-app-bar-nav-icon>
         
-        <div class="d-flex align-center">
-          <v-avatar size="50" class="me-3">
+        <div class="d-flex align-center flex-grow-1">
+          <v-avatar 
+            :size="$vuetify.display.smAndDown ? 40 : 50" 
+            class="me-2 me-sm-3"
+          >
             <v-img src="/logo.png" alt="Rice & Spice Logo"></v-img>
           </v-avatar>
-          <div>
-            <h1 class="text-h5 font-weight-bold text-white mb-0">Rice & Spice</h1>
+          <div class="d-none d-sm-block">
+            <h1 class="text-h6 text-sm-h5 font-weight-bold text-white mb-0">Rice & Spice</h1>
             <p class="text-caption text-white mb-0">Authentic Taste Of Indian Home</p>
+          </div>
+          <div class="d-block d-sm-none">
+            <h1 class="text-subtitle-1 font-weight-bold text-white mb-0">Rice & Spice</h1>
           </div>
         </div>
 
-        <v-spacer></v-spacer>
-
         <!-- Desktop Navigation -->
-        <div class="d-none d-md-flex">
+        <div class="d-none d-lg-flex">
           <v-btn
             v-for="item in navItems"
             :key="item.title"
             :to="item.path"
             variant="text"
             color="white"
-            class="mx-2"
+            class="mx-1 mx-sm-2"
             :ripple="false"
+            size="large"
           >
             {{ item.title }}
           </v-btn>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <v-btn
-          variant="text"
-          color="white"
-          class="d-md-none"
-          @click="drawer = !drawer"
-        >
-          <v-icon>mdi-menu</v-icon>
-        </v-btn>
       </v-container>
     </v-app-bar>
 
@@ -58,20 +53,42 @@
       app
       temporary
       color="primary"
+      width="280"
     >
-      <v-list>
+      <v-list class="pa-4">
+        <div class="text-center mb-4">
+          <v-avatar size="60" class="mb-2">
+            <v-img src="/logo.png" alt="Rice & Spice Logo"></v-img>
+          </v-avatar>
+          <h2 class="text-h6 text-white font-weight-bold">Rice & Spice</h2>
+          <p class="text-caption text-white">Authentic Taste Of Indian Home</p>
+        </div>
+        
+        <v-divider class="mb-4" color="white" opacity="0.3"></v-divider>
+        
         <v-list-item
           v-for="item in navItems"
           :key="item.title"
           :to="item.path"
           color="white"
           @click="drawer = false"
+          class="mb-2"
+          rounded="lg"
         >
           <template v-slot:prepend>
-            <v-icon color="white">{{ item.icon }}</v-icon>
+            <v-icon color="white" size="24">{{ item.icon }}</v-icon>
           </template>
-          <v-list-item-title class="text-white">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class="text-white font-weight-medium">{{ item.title }}</v-list-item-title>
         </v-list-item>
+        
+        <v-divider class="my-4" color="white" opacity="0.3"></v-divider>
+        
+        <!-- Contact Info in Drawer -->
+        <div class="text-center">
+          <p class="text-caption text-white mb-2">Contact Us</p>
+          <p class="text-body-2 text-white">605-592-0819</p>
+          <p class="text-caption text-white">info@ricespiceusa.com</p>
+        </div>
       </v-list>
     </v-navigation-drawer>
 
@@ -86,8 +103,8 @@
       class="text-white"
     >
       <v-container>
-        <v-row>
-          <v-col cols="12" md="4">
+        <v-row class="py-6">
+          <v-col cols="12" sm="6" md="4" class="mb-4 mb-md-0">
             <h3 class="text-h6 mb-3">Rice & Spice</h3>
             <p class="text-body-2">
               Bringing authentic Indian flavors to your neighborhood. 
@@ -95,7 +112,7 @@
             </p>
           </v-col>
           
-          <v-col cols="12" md="4">
+          <v-col cols="12" sm="6" md="4" class="mb-4 mb-md-0">
             <h3 class="text-h6 mb-3">Quick Links</h3>
             <div class="quick-links">
               <v-btn
@@ -104,36 +121,39 @@
                 :to="item.path"
                 variant="text"
                 color="white"
-                class="quick-link-btn d-block text-left mb-2"
+                class="quick-link-btn d-block text-center pa-2 mb-2"
                 :ripple="false"
+                size="medium"
               >
-                <v-icon left size="16">{{ item.icon }}</v-icon>
+                <v-icon size="16" class="me-2">{{ item.icon }}</v-icon>
                 {{ item.title }}
               </v-btn>
             </div>
           </v-col>
           
-          <v-col cols="12" md="4">
+          <v-col cols="12" sm="12" md="4">
             <h3 class="text-h6 mb-3">Contact Info</h3>
-            <div class="d-flex align-center mb-2">
-              <v-icon class="me-2">mdi-phone</v-icon>
-              <span>605-592-0819</span>
-            </div>
-            <div class="d-flex align-center mb-2">
-              <v-icon class="me-2">mdi-email</v-icon>
-              <span>info@riceandspice.com</span>
-            </div>
-            <div class="d-flex align-center">
-              <v-icon class="me-2">mdi-clock</v-icon>
-              <span>Mon-Sun: 6AM-9PM</span>
+            <div class="contact-info">
+              <p class="text-body-2 mb-2">
+                <v-icon size="16" class="me-2">mdi-phone</v-icon>
+                605-592-0819
+              </p>
+              <p class="text-body-2 mb-2">
+                <v-icon size="16" class="me-2">mdi-email</v-icon>
+                info@ricespiceusa.com
+              </p>
+              <p class="text-body-2">
+                <v-icon size="16" class="me-2">mdi-map-marker</v-icon>
+                Sioux Falls & Harrisburg, SD
+              </p>
             </div>
           </v-col>
         </v-row>
         
-        <v-divider color="white" class="my-4"></v-divider>
+        <v-divider color="white" opacity="0.3"></v-divider>
         
-        <div class="text-center">
-          <p class="text-body-2 mb-0">
+        <div class="text-center py-4">
+          <p class="text-caption text-white mb-0">
             © {{ new Date().getFullYear() }} Rice & Spice. All rights reserved.
           </p>
         </div>
@@ -152,9 +172,9 @@ export default {
         { title: 'Home', path: '/', icon: 'mdi-home' },
         { title: 'Menu', path: '/menu', icon: 'mdi-food-fork-drink' },
         { title: 'About', path: '/about', icon: 'mdi-information' },
+        { title: 'Contact', path: '/contact', icon: 'mdi-phone' },
         { title: 'Location', path: '/location', icon: 'mdi-map-marker' },
-        { title: 'Catering', path: '/catering', icon: 'mdi-food' },
-        { title: 'Contact', path: '/contact', icon: 'mdi-phone' }
+        { title: 'Catering', path: '/catering', icon: 'mdi-food-variant' }
       ]
     }
   }
@@ -162,38 +182,109 @@ export default {
 </script>
 
 <style scoped>
+/* Responsive Navigation Styles */
 .v-app-bar {
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  transition: all 0.3s ease;
 }
 
-.v-footer {
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+.v-app-bar .v-container {
+  max-width: 100%;
+}
+
+/* Mobile Navigation Drawer */
+.v-navigation-drawer {
+  border-right: none;
+}
+
+.v-list-item {
+  transition: all 0.3s ease;
 }
 
 .v-list-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
 }
 
+/* Footer Responsive */
 .quick-links {
   display: flex;
   flex-direction: column;
 }
 
+.quick-links .v-btn {
+  justify-content: center;
+  min-height: 36px;
+}
+
 .quick-link-btn {
-  justify-content: flex-start;
-  padding: 8px 0;
+  justify-content: center;
+  padding: 8px 16px;
   min-height: auto;
   text-transform: none;
   font-weight: 400;
   transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 .quick-link-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateX(8px);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .quick-link-btn .v-icon {
   margin-right: 8px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Utilities */
+@media (max-width: 600px) {
+  .v-app-bar .v-container {
+    padding: 0 8px;
+  }
+  
+  .v-footer .v-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 960px) {
+  .v-app-bar .v-container {
+    padding: 0 16px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .v-list-item:hover {
+    transform: none;
+  }
+  
+  .v-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .v-app-bar,
+  .v-navigation-drawer,
+  .v-footer {
+    background-color: #1e3a8a !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .v-app-bar,
+  .v-navigation-drawer,
+  .v-footer {
+    display: none !important;
+  }
 }
 </style> 

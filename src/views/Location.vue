@@ -354,7 +354,7 @@
             <v-card class="event-card" elevation="3">
               <v-card-text class="pa-6">
                 <div class="d-flex align-center mb-3">
-                  <v-icon color="primary" size="32" class="me-3">mdi-food-truck</v-icon>
+                  <v-icon color="primary" size="32" class="me-3">mdi-food-variant</v-icon>
                   <h3 class="text-h5 font-weight-bold mb-0">Food Festivals</h3>
                 </div>
                 <p class="text-body-1 mb-4">

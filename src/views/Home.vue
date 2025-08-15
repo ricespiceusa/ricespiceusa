@@ -105,6 +105,7 @@
                   height="200"
                   cover
                   class="menu-image"
+                  :aspect-ratio="16/9"
                 >
                   <div class="menu-overlay">
                     <v-chip color="primary" size="small" class="price-chip">
@@ -191,6 +192,7 @@
                 cover
                 rounded="xl"
                 class="about-image"
+                :aspect-ratio="4/3"
               >
                 <div class="about-image-overlay"></div>
               </v-img>
@@ -224,7 +226,12 @@
                 <p class="testimonial-text">{{ testimonial.text }}</p>
                 <div class="testimonial-author mt-4">
                   <v-avatar size="48" class="mb-2">
-                    <v-img :src="testimonial.avatar" :alt="testimonial.name"></v-img>
+                    <v-img 
+                      :src="testimonial.avatar" 
+                      :alt="testimonial.name"
+                      cover
+                      :aspect-ratio="1/1"
+                    ></v-img>
                   </v-avatar>
                   <h4 class="testimonial-name">{{ testimonial.name }}</h4>
                   <p class="testimonial-location">{{ testimonial.location }}</p>
@@ -512,14 +519,25 @@ export default {
 .menu-image-wrapper {
   position: relative;
   overflow: hidden;
+  border-radius: 16px 16px 0 0;
 }
 
 .menu-image {
   transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 
 .menu-card:hover .menu-image {
   transform: scale(1.05);
+}
+
+/* Ensure all images are responsive */
+.v-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .menu-overlay {
@@ -643,6 +661,11 @@ export default {
   font-size: 0.9rem;
 }
 
+/* Testimonial avatar responsive sizing */
+.testimonial-author .v-avatar {
+  margin: 0 auto;
+}
+
 .cta-section {
   padding: 80px 0;
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -669,13 +692,62 @@ export default {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .menu-image {
+    height: 180px;
+  }
+  
+  .about-image {
+    height: 300px !important;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
   
   .hero-subtitle {
     font-size: 1.8rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-author .v-avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-image {
+    height: 200px;
+  }
+  
+  .about-image {
+    height: 350px !important;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
   }
   
   .section-title {
@@ -695,6 +767,32 @@ export default {
   .about-content {
     padding-right: 0;
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  .about-content {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .about-features {
+    justify-content: center;
+  }
+  
+  .about-feature {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-image {
+    height: 220px;
+  }
+  
+  .about-image {
+    height: 450px !important;
   }
 }
 </style> 
